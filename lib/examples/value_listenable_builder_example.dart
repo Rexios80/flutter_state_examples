@@ -1,14 +1,9 @@
 import 'package:flutter/material.dart';
 
-class StatefulWidgetExample extends StatefulWidget {
-  const StatefulWidgetExample({super.key});
+class ValueListenableBuilderExample extends StatelessWidget {
+  final counter = ValueNotifier(0);
 
-  @override
-  State<StatefulWidget> createState() => _StatefulWidgetExampleState();
-}
-
-class _StatefulWidgetExampleState extends State<StatefulWidgetExample> {
-  int counter = 0;
+  ValueListenableBuilderExample({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,15 +14,18 @@ class _StatefulWidgetExampleState extends State<StatefulWidgetExample> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text('You have pushed the button this many times:'),
-            Text(
-              '$counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+            ValueListenableBuilder(
+              valueListenable: counter,
+              builder: (context, value, child) => Text(
+                '$value',
+                style: Theme.of(context).textTheme.headlineMedium,
+              ),
             ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => setState(() => counter++),
+        onPressed: () => counter.value++,
         child: const Icon(Icons.add),
       ),
     );

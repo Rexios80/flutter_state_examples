@@ -1,6 +1,7 @@
 import 'package:fast_ui/fast_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_state_examples/examples/stateful_widget_example.dart';
+import 'package:flutter_state_examples/examples/value_listenable_builder_example.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,6 +22,11 @@ class MyApp extends StatelessWidget {
             ElevatedButton(
               onPressed: () => FastNav.push(const StatefulWidgetExample()),
               child: const Text('StatefulWidget'),
+            ),
+            const SizedBox(height: 16),
+            ElevatedButton(
+              onPressed: () => FastNav.push(ValueListenableBuilderExample()),
+              child: const Text('ValueListenableBuilder'),
             ),
           ],
         ),

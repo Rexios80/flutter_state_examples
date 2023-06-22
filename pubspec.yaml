@@ -6,6 +6,7 @@ environment:
   sdk: ">=3.0.5 <4.0.0"
 
 dependencies:
+  fast_rx_shared_preferences: ^0.1.4
   fast_ui: ^0.1.2
   flutter:
     sdk: flutter

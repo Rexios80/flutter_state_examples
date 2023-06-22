@@ -1,11 +1,14 @@
+import 'package:fast_rx_shared_preferences/fast_rx_shared_preferences.dart';
 import 'package:fast_ui/fast_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_state_examples/examples/fast_rx_composite.dart';
 import 'package:flutter_state_examples/examples/fast_rx_example.dart';
+import 'package:flutter_state_examples/examples/fast_rx_persistence.dart';
 import 'package:flutter_state_examples/examples/stateful_widget_example.dart';
 import 'package:flutter_state_examples/examples/value_listenable_builder_example.dart';
 
-void main() {
+void main() async {
+  await FastRxSharedPreferences.init();
   runApp(const MyApp());
 }
 
@@ -39,6 +42,11 @@ class MyApp extends StatelessWidget {
             ElevatedButton(
               onPressed: () => FastNav.push(FastRxCompositeExample()),
               child: const Text('FastRx Composite'),
+            ),
+            const SizedBox(height: 16),
+            ElevatedButton(
+              onPressed: () => FastNav.push(FastRxPersistenceExample()),
+              child: const Text('FastRx Persistence'),
             ),
           ],
         ),

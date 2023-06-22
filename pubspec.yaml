@@ -1,25 +1,17 @@
 name: flutter_state_examples
-description: A new Flutter project.
-
 publish_to: none
-
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.0.5 <4.0.0'
+  sdk: ">=3.0.5 <4.0.0"
 
 dependencies:
+  fast_ui: ^0.1.2
   flutter:
     sdk: flutter
 
-  
-
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
   rexios_lints: ^5.0.0
 
 flutter:
-
   uses-material-design: true
-

@@ -1,23 +1,23 @@
+import 'package:fast_ui/fast_ui.dart';
 import 'package:flutter/material.dart';
 
-class ValueListenableExample extends StatelessWidget {
-  final counter = ValueNotifier(0);
+class FastRxExample extends StatelessWidget {
+  final counter = 0.rx;
 
-  ValueListenableExample({super.key});
+  FastRxExample({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('ValueListenable')),
+      appBar: AppBar(title: const Text('FastRx')),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text('You have pushed the button this many times:'),
-            ValueListenableBuilder(
-              valueListenable: counter,
-              builder: (context, value, child) => Text(
-                '$value',
+            FastBuilder(
+              () => Text(
+                '${counter.value}',
                 style: Theme.of(context).textTheme.headlineMedium,
               ),
             ),

@@ -1,5 +1,6 @@
 import 'package:fast_ui/fast_ui.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_state_examples/examples/fast_rx_example.dart';
 import 'package:flutter_state_examples/examples/stateful_widget_example.dart';
 import 'package:flutter_state_examples/examples/value_listenable_builder_example.dart';
 
@@ -25,8 +26,13 @@ class MyApp extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             ElevatedButton(
-              onPressed: () => FastNav.push(ValueListenableBuilderExample()),
-              child: const Text('ValueListenableBuilder'),
+              onPressed: () => FastNav.push(ValueListenableExample()),
+              child: const Text('ValueListenable'),
+            ),
+            const SizedBox(height: 16),
+            ElevatedButton(
+              onPressed: () => FastNav.push(FastRxExample()),
+              child: const Text('FastRx'),
             ),
           ],
         ),

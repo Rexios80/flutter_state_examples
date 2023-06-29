@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(title: const Text('Flutter State Examples')),
         body: ListView(
-          padding: const EdgeInsets.only(left: 16, right: 16, bottom: 16),
+          padding: const EdgeInsets.only(top: 16, left: 16, right: 16),
           children: [
             const StatefulWidgetExample(),
             ValueListenableExample(),

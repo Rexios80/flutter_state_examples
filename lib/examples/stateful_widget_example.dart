@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_state_examples/examples/counter_widget.dart';
 
 class StatefulWidgetExample extends StatefulWidget {
   const StatefulWidgetExample({super.key});
@@ -7,29 +8,18 @@ class StatefulWidgetExample extends StatefulWidget {
   State<StatefulWidget> createState() => _StatefulWidgetExampleState();
 }
 
-class _StatefulWidgetExampleState extends State<StatefulWidgetExample> {
+class _StatefulWidgetExampleState extends State<StatefulWidgetExample>
+    with CounterWidget {
+  @override
+  String get title => 'StatefulWidget';
+
   int counter = 0;
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('StatefulWidget')),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text('You have pushed the button this many times:'),
-            Text(
-              '$counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => setState(() => counter++),
-        child: const Icon(Icons.add),
-      ),
-    );
+  void increment() => setState(() => counter++);
+
+  @override
+  Widget get builder {
+    return Text('$counter');
   }
 }

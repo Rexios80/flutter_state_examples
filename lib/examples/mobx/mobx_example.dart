@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:flutter_state_examples/examples/counter_widget.dart';
 import 'package:mobx/mobx.dart';
 
 part 'mobx_example.g.dart';
@@ -17,33 +18,19 @@ abstract class _Counter with Store {
   }
 }
 
-class MobXExample extends StatelessWidget {
-  final Counter counter = Counter();
-
+class MobXExample extends StatelessWidget with CounterWidget {
   MobXExample({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('MobX')),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text('You have pushed the button this many times:'),
-            Observer(
-              builder: (context) => Text(
-                '${counter.value}',
-                style: Theme.of(context).textTheme.headlineMedium,
-              ),
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => counter.value++,
-        child: const Icon(Icons.add),
-      ),
-    );
+  final title = 'MobX';
+
+  final counter = Counter();
+
+  @override
+  void increment() => counter.increment();
+
+  @override
+  Widget get builder {
+    return Observer(builder: (context) => Text('${counter.value}'));
   }
 }

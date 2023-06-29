@@ -13,7 +13,7 @@ class FastRxCompositeExample extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('fast_rx Example'),
+        title: const Text('fast_rx_composite'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20),

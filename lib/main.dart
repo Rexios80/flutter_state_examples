@@ -1,11 +1,13 @@
 import 'package:fast_rx_shared_preferences/fast_rx_shared_preferences.dart';
 import 'package:fast_ui/fast_ui.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_state_examples/examples/fast_rx_composite.dart';
-import 'package:flutter_state_examples/examples/fast_rx_example.dart';
-import 'package:flutter_state_examples/examples/fast_rx_persistence.dart';
+import 'package:flutter_state_examples/examples/fast_rx/fast_rx_composite_example.dart';
+import 'package:flutter_state_examples/examples/fast_rx/fast_rx_example.dart';
+import 'package:flutter_state_examples/examples/fast_rx/fast_rx_persistence_example.dart';
+import 'package:flutter_state_examples/examples/getx_example.dart';
+import 'package:flutter_state_examples/examples/mobx/mobx_example.dart';
 import 'package:flutter_state_examples/examples/stateful_widget_example.dart';
-import 'package:flutter_state_examples/examples/value_listenable_builder_example.dart';
+import 'package:flutter_state_examples/examples/value_listenable_example.dart';
 
 void main() async {
   await FastRxSharedPreferences.init();
@@ -22,33 +24,26 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(title: const Text('Flutter State Examples')),
         body: ListView(
-          padding: const EdgeInsets.all(16),
+          padding: const EdgeInsets.only(left: 16, right: 16, bottom: 16),
           children: [
-            ElevatedButton(
-              onPressed: () => FastNav.push(const StatefulWidgetExample()),
-              child: const Text('StatefulWidget'),
-            ),
-            const SizedBox(height: 16),
-            ElevatedButton(
-              onPressed: () => FastNav.push(ValueListenableExample()),
-              child: const Text('ValueListenable'),
-            ),
-            const SizedBox(height: 16),
-            ElevatedButton(
-              onPressed: () => FastNav.push(FastRxExample()),
-              child: const Text('FastRx'),
-            ),
-            const SizedBox(height: 16),
-            ElevatedButton(
-              onPressed: () => FastNav.push(FastRxCompositeExample()),
-              child: const Text('FastRx Composite'),
-            ),
-            const SizedBox(height: 16),
-            ElevatedButton(
-              onPressed: () => FastNav.push(FastRxPersistenceExample()),
-              child: const Text('FastRx Persistence'),
-            ),
-          ],
+            const StatefulWidgetExample(),
+            ValueListenableExample(),
+            FastRxExample(),
+            FastRxCompositeExample(),
+            FastRxPersistenceExample(),
+            GetXExample(),
+            MobXExample(),
+          ]
+              .expand(
+                (e) => [
+                  ElevatedButton(
+                    onPressed: () => FastNav.push(e),
+                    child: Text(e.runtimeType.toString()),
+                  ),
+                  const SizedBox(height: 16),
+                ],
+              )
+              .toList(),
         ),
       ),
     );

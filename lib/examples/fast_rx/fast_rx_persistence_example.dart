@@ -22,7 +22,7 @@ class FastRxPersistenceExample extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('fast_rx_persistence Example'),
+        title: const Text('fast_rx_persistence'),
       ),
       body: Center(
         child: ListView(

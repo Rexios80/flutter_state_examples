@@ -2,9 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_state_examples/counter_widget.dart';
 
-class RiverpodExample extends ConsumerWidget with CounterWidget {
-  RiverpodExample({super.key});
+class RiverpodExample extends StatelessWidget with CounterWidget {
+  const RiverpodExample({super.key});
 
+  @override
+  final title = 'Riverpod';
+
+  @override
+  Widget build(BuildContext context) {
+    return ProviderScope(child: _RiverpodExample());
+  }
+}
+
+class _RiverpodExample extends ConsumerWidget with CounterWidget {
   @override
   final title = 'Riverpod';
 
@@ -12,17 +22,14 @@ class RiverpodExample extends ConsumerWidget with CounterWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return ProviderScope(
-      child: buildCounter(
-        context: context,
-        buildCount: (context) => Consumer(
-          builder: (context, ref, _) {
-            final count = ref.watch(counterProvider);
-            return Text('$count');
-          },
-        ),
-        increment: (context) => ref.read(counterProvider.notifier).state++,
+    return buildCounter(
+      buildCount: (context) => Consumer(
+        builder: (context, ref, _) {
+          final count = ref.watch(counterProvider);
+          return Text('$count');
+        },
       ),
+      increment: (context) => ref.read(counterProvider.notifier).state++,
     );
   }
 }

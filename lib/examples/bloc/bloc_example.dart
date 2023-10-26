@@ -46,7 +46,6 @@ class BlocExample extends StatelessWidget with CounterWidget {
     return BlocProvider(
       create: (context) => CounterBloc(),
       child: buildCounter(
-        context: context,
         // BlocBuilders are very verbose which leads to developers wanting to move
         // them up the widget tree. Ideally BlocBuilders should be as close as
         // possible to the components that rely on them for performance reasons.

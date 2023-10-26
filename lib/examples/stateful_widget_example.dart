@@ -17,9 +17,8 @@ class _StatefulWidgetExampleState extends State<StatefulWidgetExample> {
   @override
   Widget build(BuildContext context) {
     return widget.buildCounter(
-      context: context,
       buildCount: (context) => Text('$count'),
-      increment: (context) => count++,
+      increment: (context) => setState(() => count++),
     );
   }
 }

@@ -13,7 +13,6 @@ class HooksExample extends HookWidget with CounterWidget {
     final count = useState(0);
 
     return buildCounter(
-      context: context,
       buildCount: (context) => Text('${count.value}'),
       increment: (context) => count.value++,
     );

@@ -12,7 +12,6 @@ class ValueListenableExample extends StatelessWidget with CounterWidget {
   @override
   Widget build(BuildContext context) {
     return buildCounter(
-      context: context,
       buildCount: (context) => ValueListenableBuilder(
         valueListenable: counter,
         builder: (context, value, child) => Text('$value'),

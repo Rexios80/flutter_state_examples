@@ -13,7 +13,6 @@ class GetXExample extends StatelessWidget with CounterWidget {
   @override
   Widget build(BuildContext context) {
     return buildCounter(
-      context: context,
       buildCount: (context) => Obx(() => Text('${count.value}')),
       increment: (context) => count.value++,
     );

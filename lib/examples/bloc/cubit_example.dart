@@ -27,7 +27,6 @@ class CubitExample extends StatelessWidget with CounterWidget {
     return BlocProvider(
       create: (context) => CounterCubit(),
       child: buildCounter(
-        context: context,
         buildCount: (context) => BlocBuilder<CounterCubit, CounterState>(
           builder: (context, state) {
             return Text('${state.count}');

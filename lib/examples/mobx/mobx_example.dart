@@ -29,7 +29,6 @@ class MobXExample extends StatelessWidget with CounterWidget {
   @override
   Widget build(BuildContext context) {
     return buildCounter(
-      context: context,
       buildCount: (context) =>
           Observer(builder: (context) => Text('${counter.value}')),
       increment: (context) => counter.increment(),

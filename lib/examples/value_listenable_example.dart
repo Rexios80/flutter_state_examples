@@ -10,13 +10,14 @@ class ValueListenableExample extends StatelessWidget with CounterWidget {
   final counter = ValueNotifier(0);
 
   @override
-  void increment() => counter.value++;
-
-  @override
-  Widget get builder {
-    return ValueListenableBuilder(
-      valueListenable: counter,
-      builder: (context, value, child) => Text('$value'),
+  Widget build(BuildContext context) {
+    return buildCounter(
+      context: context,
+      buildCount: (context) => ValueListenableBuilder(
+        valueListenable: counter,
+        builder: (context, value, child) => Text('$value'),
+      ),
+      increment: (context) => counter.value++,
     );
   }
 }

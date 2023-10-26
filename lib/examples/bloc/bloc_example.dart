@@ -35,30 +35,30 @@ class CounterStateWithValue extends CounterState {
 }
 
 class BlocExample extends StatelessWidget with CounterWidget {
-  BlocExample({super.key});
+  const BlocExample({super.key});
 
   @override
   final title = 'Bloc';
 
-  final counterBloc = CounterBloc();
-
   @override
-  void increment() => counterBloc.add(const IncrementEvent());
-
-  @override
-  Widget get builder {
+  Widget build(BuildContext context) {
     // Bloc adds a lot of clutter to the widget tree
-    return BlocProvider.value(
-      value: counterBloc,
-      // BlocBuilders are very verbose which leads to developers wanting to move
-      // them up the widget tree. Ideally BlocBuilders should be as close as
-      // possible to the components that rely on them for performance reasons.
-      child: BlocBuilder<CounterBloc, CounterState>(
-        builder: (context, state) {
-          // Must check state type everywhere
-          if (state is! CounterStateWithValue) return const SizedBox.shrink();
-          return Text('${state.count}');
-        },
+    return BlocProvider(
+      create: (context) => CounterBloc(),
+      child: buildCounter(
+        context: context,
+        // BlocBuilders are very verbose which leads to developers wanting to move
+        // them up the widget tree. Ideally BlocBuilders should be as close as
+        // possible to the components that rely on them for performance reasons.
+        buildCount: (context) => BlocBuilder<CounterBloc, CounterState>(
+          builder: (context, state) {
+            // Must check state type everywhere
+            if (state is! CounterStateWithValue) return const SizedBox.shrink();
+            return Text('${state.count}');
+          },
+        ),
+        increment: (context) =>
+            context.read<CounterBloc>().add(const IncrementEvent()),
       ),
     );
   }

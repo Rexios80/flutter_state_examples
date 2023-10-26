@@ -17,25 +17,23 @@ class CounterState {
 }
 
 class CubitExample extends StatelessWidget with CounterWidget {
-  CubitExample({super.key});
+  const CubitExample({super.key});
 
   @override
   final title = 'Cubit';
 
-  final counterCubit = CounterCubit();
-
   @override
-  void increment() => counterCubit.increment();
-
-  @override
-  Widget get builder {
-    return BlocProvider.value(
-      value: counterCubit,
-      // Still need to use verbose BlocBuilder
-      child: BlocBuilder<CounterCubit, CounterState>(
-        builder: (context, state) {
-          return Text('${state.count}');
-        },
+  Widget build(BuildContext context) {
+    return BlocProvider(
+      create: (context) => CounterCubit(),
+      child: buildCounter(
+        context: context,
+        buildCount: (context) => BlocBuilder<CounterCubit, CounterState>(
+          builder: (context, state) {
+            return Text('${state.count}');
+          },
+        ),
+        increment: (context) => context.read<CounterCubit>().increment(),
       ),
     );
   }

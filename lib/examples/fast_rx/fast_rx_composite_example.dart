@@ -1,7 +1,11 @@
 import 'package:fast_ui/fast_ui.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_state_examples/counter_widget.dart';
 
-class FastRxCompositeExample extends StatelessWidget {
+class FastRxCompositeExample extends StatelessWidget with CounterWidget {
+  @override
+  final title = 'FastRxComposite';
+
   final _int = 0.rx;
 
   final _list = [0.rx].rx;

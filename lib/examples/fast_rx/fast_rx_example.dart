@@ -8,13 +8,14 @@ class FastRxExample extends StatelessWidget with CounterWidget {
   @override
   final title = 'fast_rx';
 
-  final counter = 0.rx;
+  final count = 0.rx;
 
   @override
-  void increment() => counter.value++;
-
-  @override
-  Widget get builder {
-    return FastBuilder(() => Text('${counter.value}'));
+  Widget build(BuildContext context) {
+    return buildCounter(
+      context: context,
+      buildCount: (context) => FastBuilder(() => Text('${count.value}')),
+      increment: (context) => count.value++,
+    );
   }
 }

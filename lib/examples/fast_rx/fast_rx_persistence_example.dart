@@ -1,7 +1,11 @@
 import 'package:fast_ui/fast_ui.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_state_examples/counter_widget.dart';
 
-class FastRxPersistenceExample extends StatelessWidget {
+class FastRxPersistenceExample extends StatelessWidget with CounterWidget {
+  @override
+  final title = 'FastRxPersistence';
+
   final intPref = 0.rx..persist('int');
   final doublePref = 0.0.rx..persist('double');
   final boolPref = false.rx..persist('bool');

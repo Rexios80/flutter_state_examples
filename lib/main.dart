@@ -1,12 +1,14 @@
 import 'package:fast_rx_shared_preferences/fast_rx_shared_preferences.dart';
 import 'package:fast_ui/fast_ui.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_state_examples/counter_widget.dart';
 import 'package:flutter_state_examples/examples/bloc/bloc_example.dart';
 import 'package:flutter_state_examples/examples/bloc/cubit_example.dart';
 import 'package:flutter_state_examples/examples/fast_rx/fast_rx_composite_example.dart';
 import 'package:flutter_state_examples/examples/fast_rx/fast_rx_example.dart';
 import 'package:flutter_state_examples/examples/fast_rx/fast_rx_persistence_example.dart';
 import 'package:flutter_state_examples/examples/getx_example.dart';
+import 'package:flutter_state_examples/examples/hooks_example.dart';
 import 'package:flutter_state_examples/examples/mobx/mobx_example.dart';
 import 'package:flutter_state_examples/examples/riverpod_example.dart';
 import 'package:flutter_state_examples/examples/stateful_widget_example.dart';
@@ -28,23 +30,24 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(title: const Text('Flutter State Examples')),
         body: ListView(
           padding: const EdgeInsets.only(top: 16, left: 16, right: 16),
-          children: [
+          children: <CounterWidget>[
             const StatefulWidgetExample(),
-            const RiverpodExample(),
-            BlocExample(),
-            CubitExample(),
+            RiverpodExample(),
+            const BlocExample(),
+            const CubitExample(),
             ValueListenableExample(),
             FastRxExample(),
             FastRxCompositeExample(),
             FastRxPersistenceExample(),
             GetXExample(),
             MobXExample(),
+            const HooksExample(),
           ]
               .expand(
                 (e) => [
                   ElevatedButton(
                     onPressed: () => FastNav.push(e),
-                    child: Text(e.runtimeType.toString()),
+                    child: Text(e.title),
                   ),
                   const SizedBox(height: 16),
                 ],

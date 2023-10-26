@@ -8,13 +8,14 @@ class GetXExample extends StatelessWidget with CounterWidget {
   @override
   final title = 'GetX';
 
-  final counter = 0.obs;
+  final count = 0.obs;
 
   @override
-  void increment() => counter.value++;
-
-  @override
-  Widget get builder {
-    return Obx(() => Text('${counter.value}'));
+  Widget build(BuildContext context) {
+    return buildCounter(
+      context: context,
+      buildCount: (context) => Obx(() => Text('${count.value}')),
+      increment: (context) => count.value++,
+    );
   }
 }

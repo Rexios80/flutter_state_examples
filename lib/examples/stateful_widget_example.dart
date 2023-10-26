@@ -1,25 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_state_examples/counter_widget.dart';
 
-class StatefulWidgetExample extends StatefulWidget {
+class StatefulWidgetExample extends StatefulWidget with CounterWidget {
   const StatefulWidgetExample({super.key});
+
+  @override
+  final title = 'StatefulWidget';
 
   @override
   State<StatefulWidget> createState() => _StatefulWidgetExampleState();
 }
 
-class _StatefulWidgetExampleState extends State<StatefulWidgetExample>
-    with CounterWidget {
-  @override
-  final title = 'StatefulWidget';
-
-  int counter = 0;
+class _StatefulWidgetExampleState extends State<StatefulWidgetExample> {
+  int count = 0;
 
   @override
-  void increment() => setState(() => counter++);
-
-  @override
-  Widget get builder {
-    return Text('$counter');
+  Widget build(BuildContext context) {
+    return widget.buildCounter(
+      context: context,
+      buildCount: (context) => Text('$count'),
+      increment: (context) => count++,
+    );
   }
 }

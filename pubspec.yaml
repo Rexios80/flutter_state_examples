@@ -3,13 +3,14 @@ publish_to: none
 version: 1.0.0+1
 
 environment:
-  sdk: ">=3.0.5 <4.0.0"
+  sdk: ^3.0.0
 
 dependencies:
   flutter:
     sdk: flutter
-  fast_rx_shared_preferences: ^0.1.4
+
   fast_ui: ^0.1.2
+  fast_rx_shared_preferences: ^0.1.4
   get: ^4.6.5
   flutter_mobx: ^2.0.6+5
   mobx: ^2.2.0

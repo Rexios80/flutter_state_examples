@@ -13,9 +13,10 @@ dependencies:
   get: ^4.6.5
   flutter_mobx: ^2.0.6+5
   mobx: ^2.2.0
+  flutter_riverpod: ^2.4.4
 
 dev_dependencies:
-  rexios_lints: ^5.0.0
+  rexios_lints: ^6.0.1
   build_runner: ^2.4.6
   mobx_codegen: ^2.3.0
 

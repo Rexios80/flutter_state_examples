@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_state_examples/examples/counter_widget.dart';
+import 'package:flutter_state_examples/counter_widget.dart';
 
 class StatefulWidgetExample extends StatefulWidget {
   const StatefulWidgetExample({super.key});
@@ -11,7 +11,7 @@ class StatefulWidgetExample extends StatefulWidget {
 class _StatefulWidgetExampleState extends State<StatefulWidgetExample>
     with CounterWidget {
   @override
-  String get title => 'StatefulWidget';
+  final title = 'StatefulWidget';
 
   int counter = 0;
 

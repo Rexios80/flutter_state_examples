@@ -1,16 +1,17 @@
 # flutter_state_examples
 
-A new Flutter project.
+## What is state management?
+State management is how you manage the state of your application. This can mean the state of the entire app, the UI, or even a single component.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Examples contained in this repo
+- [StatefulWidget](lib/examples/stateful_widget_example.dart)
+- [Bloc](lib/examples/bloc/bloc_example.dart)
+- [Cubit](lib/examples/bloc/cubit_example.dart)
+- [Riverpod](lib/examples/riverpod_example.dart)
+- [ValueListenable](lib/examples/value_listenable_example.dart)
+- [GetX](lib/examples/getx_example.dart)
+- [MobX](lib/examples/mobx/mobx_example.dart)
+- [Hooks](lib/examples/hooks_example.dart)
+- [FastRx](lib/examples/fast_rx/fast_rx_example.dart)
+- [FastRxComposite](lib/examples/fast_rx/fast_rx_composite_example.dart)
+- [FastRxPersistence](lib/examples/fast_rx/fast_rx_persistence_example.dart)

@@ -35,3 +35,11 @@ class MobXExample extends StatelessWidget with CounterWidget {
     );
   }
 }
+
+/*
+Pros:
+- More explicit than other reactive solutions
+
+Cons:
+- Code generation
+*/

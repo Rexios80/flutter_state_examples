@@ -20,3 +20,11 @@ class ValueListenableExample extends StatelessWidget with CounterWidget {
     );
   }
 }
+
+/*
+Pros:
+- Built-in to Flutter
+
+Cons:
+- More verbose than other reactive solutions
+*/

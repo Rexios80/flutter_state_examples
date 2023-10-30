@@ -62,3 +62,13 @@ class BlocExample extends StatelessWidget with CounterWidget {
     );
   }
 }
+
+/*
+Pros:
+- Very explicit
+
+Cons:
+- Very verbose
+- Have to check the state class every time you want to access it
+- BlocBuilders are annoying to use
+*/

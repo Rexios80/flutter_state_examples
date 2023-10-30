@@ -18,3 +18,14 @@ class FastRxExample extends StatelessWidget with CounterWidget {
     );
   }
 }
+
+/*
+Pros:
+- Takes very little code to get working
+- FastBuilders are easy to use and facilitate proper placement
+- Useful extensions such as fast_rx_persistence and fast_rx_composite
+
+Cons:
+- Not as explicit as other solutions
+- Have to unwrap primitives
+*/

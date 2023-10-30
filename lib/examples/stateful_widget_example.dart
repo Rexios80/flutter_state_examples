@@ -22,3 +22,13 @@ class _StatefulWidgetExampleState extends State<StatefulWidgetExample> {
     );
   }
 }
+
+/*
+Pros:
+- Built-in to Flutter
+- Simple to use
+
+Cons:
+- Need 2 classes
+- Have to explicitly call setState (might be a positive if you're into that)
+*/

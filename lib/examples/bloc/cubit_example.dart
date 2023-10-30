@@ -37,3 +37,13 @@ class CubitExample extends StatelessWidget with CounterWidget {
     );
   }
 }
+
+/*
+Pros:
+- Same as Bloc
+- Less verbose than a full bloc
+- Only one state class to deal with
+
+Cons:
+- Still have to use the verbose BlocBuilder
+*/

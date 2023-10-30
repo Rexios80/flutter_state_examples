@@ -33,3 +33,12 @@ class _RiverpodExample extends ConsumerWidget with CounterWidget {
     );
   }
 }
+
+/*
+Pros:
+- Idk honestly
+
+Cons:
+- Custom widget solution (not as portable)
+- The most verbose reactive solution possible
+*/

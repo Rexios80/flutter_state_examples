@@ -32,16 +32,16 @@ class MyApp extends StatelessWidget {
           padding: const EdgeInsets.only(top: 16, left: 16, right: 16),
           children: <CounterWidget>[
             const StatefulWidgetExample(),
-            RiverpodExample(),
+            const RiverpodExample(),
             const BlocExample(),
             const CubitExample(),
             ValueListenableExample(),
-            FastRxExample(),
-            FastRxCompositeExample(),
-            FastRxPersistenceExample(),
             GetXExample(),
             MobXExample(),
             const HooksExample(),
+            FastRxExample(),
+            FastRxCompositeExample(),
+            FastRxPersistenceExample(),
           ]
               .expand(
                 (e) => [

@@ -18,3 +18,13 @@ class HooksExample extends HookWidget with CounterWidget {
     );
   }
 }
+
+/*
+Pros:
+- Similar to other frameworks
+- Little code
+
+Cons:
+- Hooks can only be used in the build method
+- Have to unwrap primitives
+*/

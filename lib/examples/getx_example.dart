@@ -18,3 +18,13 @@ class GetXExample extends StatelessWidget with CounterWidget {
     );
   }
 }
+
+/*
+Pros:
+- Takes very little code to get working
+- Builders are easy to use and facilitate proper placement
+
+Cons:
+- Not as explicit as other solutions
+- Have to unwrap primitives
+*/
